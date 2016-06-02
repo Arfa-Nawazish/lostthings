@@ -1,0 +1,44 @@
+﻿<aside class="col-md-3 sidebar">
+				<div class="widget widget_stats">
+					<h3 class="widget_title">Stats</h3>
+					<div class="ul_list ul_list-icon-ok">
+						<ul>
+							<li>Questions ( <span>20</span> )</li>
+							<li>Answers ( <span>50</span> )</li>
+						</ul>
+					</div>
+				</div>
+				
+                    
+				        <div class="widget">
+					        <h3 class="widget_title">Recent Questions</h3>
+					        <ul class="related-posts">
+                            @{  if(ViewBag.lost != null)
+                                {
+                                    foreach(var d in ViewBag.lost)
+                                    {
+						                <li class="related-item">
+							                <h3><a href="#">@d.title</a></h3>
+							                <p>@d.description.</p>
+							                <div class="clear"></div><span>@d.date</span>
+						                </li>
+                                    }
+                                }
+                             }
+						      @{  if (ViewBag.ad != null)
+                                {
+                                    foreach (var d in ViewBag.ad)
+                                    {
+						                <li class="related-item">
+							                <h3><a href="#">@d.title</a></h3>
+							                <p>@d.description.</p>
+							                <div class="clear"></div><span>@d.date</span>
+						                </li>
+                                    }
+                                }
+                             }
+					        </ul>
+				        </div>
+                   
+               
+			</aside>

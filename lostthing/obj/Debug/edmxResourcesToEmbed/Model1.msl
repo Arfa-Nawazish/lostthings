@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="Database1Model.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="adminName" ColumnName="adminName" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="emai" ColumnName="emai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ads">
+      <EntityTypeMapping TypeName="Database1Model.ad">
+        <MappingFragment StoreEntitySet="ads">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="phoneNo" ColumnName="phoneNo" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="Database1Model.Comment">
+        <MappingFragment StoreEntitySet="Comments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="postID" ColumnName="postID" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="username" ColumnName="username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LostThingsImages">
+      <EntityTypeMapping TypeName="Database1Model.LostThingsImage">
+        <MappingFragment StoreEntitySet="LostThingsImages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="FileSource" ColumnName="FileSource" />
+          <ScalarProperty Name="nPostId" ColumnName="nPostId" />
+          <ScalarProperty Name="appPostId" ColumnName="appPostId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NonApproveAds">
+      <EntityTypeMapping TypeName="Database1Model.NonApproveAd">
+        <MappingFragment StoreEntitySet="NonApproveAds">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="phoneNo" ColumnName="phoneNo" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NonApproveLostThings">
+      <EntityTypeMapping TypeName="Database1Model.NonApproveLostThing">
+        <MappingFragment StoreEntitySet="NonApproveLostThings">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="phoneNo" ColumnName="phoneNo" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="replies">
+      <EntityTypeMapping TypeName="Database1Model.reply">
+        <MappingFragment StoreEntitySet="reply">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="commentID" ColumnName="commentID" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="username" ColumnName="username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="returnMePosts">
+      <EntityTypeMapping TypeName="Database1Model.returnMePost">
+        <MappingFragment StoreEntitySet="returnMePosts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="phoneNo" ColumnName="phoneNo" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="Database1Model.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
