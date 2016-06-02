@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Database1Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Database1ModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Database1Model.Store.Admin" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ads" EntityType="Database1Model.Store.ads" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Comments" EntityType="Database1Model.Store.Comments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LostThingsImages" EntityType="Database1Model.Store.LostThingsImages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NonApproveAds" EntityType="Database1Model.Store.NonApproveAds" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NonApproveLostThings" EntityType="Database1Model.Store.NonApproveLostThings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="reply" EntityType="Database1Model.Store.reply" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="returnMePosts" EntityType="Database1Model.Store.returnMePosts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="User" EntityType="Database1Model.Store.User" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_ads_userID" Association="Database1Model.Store.FK_ads_userID">
+      <End Role="User" EntitySet="User" />
+      <End Role="ads" EntitySet="ads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comments_returnMePosts" Association="Database1Model.Store.FK_Comments_returnMePosts">
+      <End Role="returnMePosts" EntitySet="returnMePosts" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LostThingsImages_appPstId" Association="Database1Model.Store.FK_LostThingsImages_appPstId">
+      <End Role="returnMePosts" EntitySet="returnMePosts" />
+      <End Role="LostThingsImages" EntitySet="LostThingsImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LostThingsImages_nonApproveLostThings" Association="Database1Model.Store.FK_LostThingsImages_nonApproveLostThings">
+      <End Role="NonApproveLostThings" EntitySet="NonApproveLostThings" />
+      <End Role="LostThingsImages" EntitySet="LostThingsImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NonApproveAds_user" Association="Database1Model.Store.FK_NonApproveAds_user">
+      <End Role="User" EntitySet="User" />
+      <End Role="NonApproveAds" EntitySet="NonApproveAds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NonApproveLostThings_user" Association="Database1Model.Store.FK_NonApproveLostThings_user">
+      <End Role="User" EntitySet="User" />
+      <End Role="NonApproveLostThings" EntitySet="NonApproveLostThings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_reply_Comments" Association="Database1Model.Store.FK_reply_Comments">
+      <End Role="Comments" EntitySet="Comments" />
+      <End Role="reply" EntitySet="reply" />
+    </AssociationSet>
+    <AssociationSet Name="FK_returnMePosts_userID" Association="Database1Model.Store.FK_returnMePosts_userID">
+      <End Role="User" EntitySet="User" />
+      <End Role="returnMePosts" EntitySet="returnMePosts" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="adminName" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
+    <Property Name="emai" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ads">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="phoneNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="description" Type="nvarchar(max)" />
+    <Property Name="userID" Type="int" />
+    <Property Name="status" Type="nvarchar" MaxLength="50" />
+    <Property Name="time" Type="nvarchar" MaxLength="50" />
+    <Property Name="date" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Comments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="postID" Type="int" />
+    <Property Name="description" Type="nvarchar(max)" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LostThingsImages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="FileSource" Type="image" />
+    <Property Name="nPostId" Type="int" />
+    <Property Name="appPostId" Type="int" />
+  </EntityType>
+  <EntityType Name="NonApproveAds">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="phoneNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" />
+    <Property Name="userID" Type="int" />
+    <Property Name="status" Type="nvarchar" MaxLength="50" />
+    <Property Name="time" Type="nvarchar" MaxLength="50" />
+    <Property Name="date" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="NonApproveLostThings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="phoneNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" />
+    <Property Name="userID" Type="int" />
+    <Property Name="status" Type="nvarchar" MaxLength="50" />
+    <Property Name="time" Type="nvarchar" MaxLength="50" />
+    <Property Name="date" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="reply">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="commentID" Type="int" />
+    <Property Name="description" Type="nvarchar(max)" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="returnMePosts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="phoneNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="description" Type="nvarchar(max)" />
+    <Property Name="userID" Type="int" />
+    <Property Name="status" Type="nvarchar" MaxLength="50" />
+    <Property Name="time" Type="nvarchar" MaxLength="50" />
+    <Property Name="date" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_ads_userID">
+    <End Role="User" Type="Database1Model.Store.User" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ads" Type="Database1Model.Store.ads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ads">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comments_returnMePosts">
+    <End Role="returnMePosts" Type="Database1Model.Store.returnMePosts" Multiplicity="0..1" />
+    <End Role="Comments" Type="Database1Model.Store.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="returnMePosts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="postID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LostThingsImages_appPstId">
+    <End Role="returnMePosts" Type="Database1Model.Store.returnMePosts" Multiplicity="0..1" />
+    <End Role="LostThingsImages" Type="Database1Model.Store.LostThingsImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="returnMePosts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LostThingsImages">
+        <PropertyRef Name="appPostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LostThingsImages_nonApproveLostThings">
+    <End Role="NonApproveLostThings" Type="Database1Model.Store.NonApproveLostThings" Multiplicity="0..1" />
+    <End Role="LostThingsImages" Type="Database1Model.Store.LostThingsImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NonApproveLostThings">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LostThingsImages">
+        <PropertyRef Name="nPostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NonApproveAds_user">
+    <End Role="User" Type="Database1Model.Store.User" Multiplicity="0..1" />
+    <End Role="NonApproveAds" Type="Database1Model.Store.NonApproveAds" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NonApproveAds">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NonApproveLostThings_user">
+    <End Role="User" Type="Database1Model.Store.User" Multiplicity="0..1" />
+    <End Role="NonApproveLostThings" Type="Database1Model.Store.NonApproveLostThings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NonApproveLostThings">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_reply_Comments">
+    <End Role="Comments" Type="Database1Model.Store.Comments" Multiplicity="0..1" />
+    <End Role="reply" Type="Database1Model.Store.reply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comments">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="reply">
+        <PropertyRef Name="commentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_returnMePosts_userID">
+    <End Role="User" Type="Database1Model.Store.User" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="returnMePosts" Type="Database1Model.Store.returnMePosts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="returnMePosts">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

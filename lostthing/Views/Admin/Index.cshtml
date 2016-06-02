@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+@Html.Partial("_header")
+<body>
+
+
+<div id="wrap">
+	
+	
+	<div class="breadcrumbs">
+		<section class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Admin Panel</h1>
+				</div>
+				
+			</div><!-- End row -->
+		</section><!-- End container -->
+	</div><!-- End breadcrumbs -->          
+    
+    <section class="container main-content">
+		<div class="row">
+			<div class="col-md-9">
+				
+				<div class="tabs-warp question-tab">
+		            
+		            <div class="tab-inner-warp">
+						<div class="tab-inner">
+                            @{
+                                /*foreach (var s in Model)
+                        {
+                            var base64 = Convert.ToBase64String(s.image);
+                            var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                            <a href="Displaybook/@s.id">
+                                <img src="@imgSrc" style="width:200px;height:300px;"/>*/
+                                if (ViewBag.lostthing != null )
+                                {
+                                    foreach (var d in ViewBag.lostthing)
+                                    {
+                                        var base64 = Convert.ToBase64String(d.image.ToArray());
+                                        var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+							            <article class="question question-type-normal">                                            
+								            <a href="#"><img src="@imgSrc"  width="50%" alt=""/></a> 
+                                            <h2>
+									            <a href="~/Home/return_me_single_post">@d.title</a>
+								            </h2>
+								
+								            <div class="question-author">
+									            <a href="#" original-title="ahmed" class="question-author-img tooltip-n"><span></span><img alt="" src="../ask-me/images/demo/avatar.png"></a>
+								            </div>
+								            <div class="question-inner">
+									            <div class="clearfix"></div>
+									            <p class="question-desc">@d.description</p>									                                    
+								            </div>                                            
+							            </article>
+                                        <a class="button small color signup" href="~/Admin/addTolostThings/@d.Id" ">Approve</a>
+                                        <a href="~/Admin/ignoreAds/@d.Id" ></a>
+                                        <a class="button small color signup" href="~/Admin/ignoreAds/@d.Id">Ignore</a>
+                                     }
+                                 }
+
+                                if (ViewBag.ads != null)
+                                { 
+                                     foreach (var a in ViewBag.ads)
+                                     {
+                                         if(a.image!=null)
+                                         {
+                                             var base64 = Convert.ToBase64String(a.image.ToArray());
+                                             var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+							                <article class="question question-type-normal">
+                                                <div class="question-author">
+									                  <a href="#" original-title="ahmed" class="question-author-img tooltip-n"><span></span><img alt="" src="http://2code.info/demo/html/ask-me/images/demo/admin.jpeg"></a>
+								                </div>
+                                                <h2>
+                                                    <p><br></p>
+                                                </h2>
+                                                <h2>
+                                                    <a href="~/User/return_me_single_post/@a.Id">@a.title</a>
+								                </h2>
+
+								                <a href="#"><img src="@imgSrc"  width="50%" alt="" /></a>
+
+								                <div class="question-inner">
+									                <div class="clearfix"></div>
+									                <p class="question-desc">@a.description</p>
+									                <span class="question-date"><i class="icon-time"></i>@a.time</span>
+									                <span class="question-comment"><a href="#"><i class="icon-comment"></i>@a.date</a></span>
+									                <div class="clearfix"></div>                   
+								                </div>
+							                </article>
+                                            <a class="button small color signup" href="~/Admin/addToAds/@a.Id">Approve</a>
+                                            <a class="button small color signup" href="~/Admin/ignorelostThings/@a.Id">Ignore</a>
+                                         }
+                                         else
+                                         {
+                                             <article class="question question-type-normal">
+                                                <div class="question-author">
+									                  <a href="#" original-title="ahmed" class="question-author-img tooltip-n"><span></span><img alt="" src="http://2code.info/demo/html/ask-me/images/demo/admin.jpeg"></a>
+								                </div>
+                                                <h2>
+                                                    <p><br></p>
+                                                </h2>
+                                                <h2>
+                                                    <a href="~/User/return_me_single_post/@a.Id">@a.title</a>
+								                </h2>
+								                <div class="question-inner">
+									                <div class="clearfix"></div>
+									                <p class="question-desc">@a.description</p>
+									                <span class="question-date"><i class="icon-time"></i>@a.time</span>
+									                <span class="question-comment"><a href="#"><i class="icon-comment"></i>@a.date</a></span>
+									                <div class="clearfix"></div>                   
+								                </div>
+							                </article>
+                                            <a class="button small color signup" href="~/Admin/addToAds/@a.Id">Approve</a>
+                                            <a class="button small color signup" href="~/Admin/ignorelostThings/@a.Id">Ignore</a>
+                                         }
+                                      } 
+                                 }
+
+                                if (ViewBag.lostthing == null && ViewBag.ads == null) 
+                                 {
+                                    <p>No posts </p>
+                                 }
+                            
+                            }
+                            
+                            @*<a href="#" class="load-questions"><i class="icon-refresh"></i>Load More Questions</a>*@
+					    </div>
+					</div>
+					
+		        </div><!-- End page-content -->
+			</div><!-- End main -->
+		</div><!-- End row -->
+	</section><!-- End container -->
+	
+@Html.Partial("_footer");
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+
+    @Html.Partial("_header");
+
+<body>
+
+@*<div class="loader"><div class="loader_html"></div></div>*@
+
+<div id="wrap">
+	
+	@*<div class="panel-pop" id="lost-password">
+		<h2>Lost Password<i class="icon-remove"></i></h2>
+		<div class="form-style form-style-3">
+			<p>Lost your password? Please enter your username and email address. You will receive a link to create a new password via email.</p>
+			<form>
+				<div class="form-inputs clearfix">
+					<p>
+						<label class="required">Username<span>*</span></label>
+						<input type="text">
+					</p>
+					<p>
+						<label class="required">E-Mail<span>*</span></label>
+						<input type="email">
+					</p>
+				</div>
+				<p class="form-submit">
+					<input type="submit" value="Reset" class="button color small submit">
+				</p>
+			</form>
+			<div class="clearfix"></div>
+		</div>
+	</div>*@<!-- End lost-password -->
+	
+	
+	
+	@*<div class="section-warp ask-me">
+		<div class="container clearfix">
+			<div class="box_icon box_warp box_no_border box_no_background" box_border="transparent" box_background="transparent" box_color="#FFF">
+				<div class="row">
+					<div class="col-md-3">
+						<h2>Welcome to Find things</h2>
+						<p></p>
+						<div class="clearfix"></div>
+						<a class="color button dark_button medium" href="#">About Us</a>
+						<a class="color button dark_button medium" href="~/Home/signup">Join Now</a>
+					</div>
+					<div class="col-md-9">
+						<form class="form-style form-style-2">
+							<p>
+								<textarea rows="4" id="question_title" onfocus="if(this.value=='Ask any question and you be sure find your answer ?')this.value='';" onblur="if(this.value=='')this.value='Ask any question and you be sure find your answer ?';">Ask any question and you be sure find your answer ?</textarea>
+								<i class="icon-pencil"></i>
+								<span class="color button small publish-question">Ask Now</span>
+							</p>
+						</form>
+					</div>
+				</div><!-- End row -->
+			</div><!-- End box_icon -->
+		</div><!-- End container -->
+	</div>*@<!-- End section-warp -->
+	<div class="section-warp ask-me">                                         
+		<div class="container clearfix">
+			<div class="box_icon box_warp box_no_border box_no_background" box_border="transparent" box_background="transparent" box_color="#FFF">
+				<div class="row">
+					<div class="col-md-12">
+						<h2>Welcome to Find things</h2>
+						<p>Find your lost things here or Sale some extra stuff</p>
+						<div class="clearfix"></div>
+						<a class="color button dark_button medium" href="#">About Us</a>
+						<a class="color button dark_button medium" href="#">Join Now</a>
+						<div class="clearfix"></div>
+						<form class="form-style form-style-2">
+							<p>
+                                <br><br><br><br><br><br>
+								@*<input type="text" id="question_title" value="Ask any question and you be sure find your answer ?" onfocus="if(this.value=='Ask any question and you be sure find your answer ?')this.value='';" onblur="if(this.value=='')this.value='Ask any question and you be sure find your answer ?';">
+								<i class="icon-pencil"></i>
+								<span class="color button small publish-question">Ask Now</span>*@
+							</p>
+						</form>
+					</div>
+				</div><!-- End row -->
+			</div><!-- End box_icon -->
+		</div><!-- End container -->
+	</div>                                                                  @*Index_2 wala wrap me*@
+	
+    
+    <section class="container main-content">
+		<div class="row">
+			<div class="col-md-9">
+			
+			</div><!-- End main -->
+		</div><!-- End row -->
+	</section><!-- End container -->
+	@Html.Partial("_footer");
+
+</body>
+</html>

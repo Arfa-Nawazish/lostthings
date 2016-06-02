@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+
+    @Html.Partial("_header");
+
+<body>
+
+  <section class="container main-content">
+		<h2>Register Now</h2>
+		<div class="form-style form-style-3">
+			<form action="~/Home/RegisterUser">
+				<div class="form-inputs clearfix">
+					<p>
+						<label class="required">Username<span>*</span></label>
+						<input type="text" name="uname">
+					</p>
+					<p>
+						<label class="required">E-Mail<span>*</span></label>
+						<input type="email" name="email">
+					</p>
+					<p>
+						<label class="required">Password<span>*</span></label>
+						<input type="password" name="passwd">
+					</p>
+					<p>
+						<label class="required">Confirm Password<span>*</span></label>
+						<input type="password" value="" name="cpass">
+					</p>
+				</div>
+                @*<a class="button small color signup">Create an account</a>*@
+				<p class="form-submit">
+					<input type="submit" value="Signup" class="button small color signup"">
+				</p>
+			</form>
+		</div>
+ </section>
+    @Html.Partial("_footer");
+
+</body>
+</html>
